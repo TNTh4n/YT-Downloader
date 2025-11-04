@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Batch Downloader</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <h1>YouTube Batch Downloader</h1>
+            </div>
+
+            <div class="content">
+                <p class="description">
+                    Enter YouTube video URLs below. You can add multiple videos to download them in batch.
+                </p>
+
+                <div id="errorMessage" class="error-message hidden">
+                    <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span id="errorText"></span>
+                </div>
+
+                <div id="urlInputs" class="url-inputs"></div>
+
+                <div class="button-group">
+                    <button id="addUrlBtn" class="btn btn-secondary">
+                        <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        Add URL
+                    </button>
+                    <button id="prepareDownloadsBtn" class="btn btn-primary">
+                        <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Prepare Downloads
+                    </button>
+                </div>
+            </div>
+
+            <div id="downloadQueue" class="download-queue hidden">
+                <div class="queue-header">
+                    <h2>Download Queue (<span id="queueCount">0</span>)</h2>
+                    <button id="clearAllBtn" class="btn-text">Clear All</button>
+                </div>
+                <div id="downloadList" class="download-list"></div>
+            </div>
+
+            <div class="note">
+                <p>
+                    <strong>Note:</strong> This app prepares your downloads and redirects you to a third-party service (Y2Mate) 
+                    to complete the download. Due to browser security restrictions, direct downloading requires external services. 
+                    Make sure to respect YouTube's Terms of Service and copyright laws.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
